@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default Prediction Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    #result {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #result h2 {
+      color: #333;
+    }
+
+    #result p {
+      font-size: 18px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <h3 style="text-align: center;">Default Prediction Form</h3>
+
+  <div>
+    <form action="/result" method="POST">
+      <label for="term">Term</label>
+      <select id="term" name="term">
+        <option value="0">36 months</option>
+        <option value="1">60 months</option>
+      </select>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender">
+        <option value="0">Female</option>
+        <option value="1">Male</option>
+      </select>
+
+      <label for="purpose">Purpose</label>
+      <select id="purpose" name="purpose">
+        <option value="0">Car</option>
+        <option value="1">House</option>
+        <option value="2">Medical</option>
+        <option value="3">Other</option>
+        <option value="4">Personal</option>
+        <option value="5">Wedding</option>
+      </select>
+
+      <label for="home_ownership">Home Ownership</label>
+      <select id="home_ownership" name="home_ownership">
+        <option value="0">Mortgage</option>
+        <option value="1">Own</option>
+        <option value="2">Rent</option>
+      </select>
+
+      <label for="age">Age</label>
+      <select id="age" name="age">
+        <option value="0">20-25</option>
+        <option value="1">>25</option>
+      </select>
+
+      <label for="FICO">FICO</label>
+      <select id="FICO" name="FICO">
+        <option value="0">300-500</option>
+        <option value="1">>500</option>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div id="result">
+    <h2>Result:</h2>
+    <p>{{ prediction }}</p>
+  </div>
+</body>
+</html>
